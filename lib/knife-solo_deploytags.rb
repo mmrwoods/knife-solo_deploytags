@@ -19,8 +19,8 @@ Chef::Knife::SoloCook.after do
   next if @no_deploytags
   git_user = `git config user.name`.chomp
   git_ref = `git log --abbrev-commit --oneline -n1 | cut -f1 -d' '`.chomp
-  ui.msg "Tagging release of #{git_ref} to #{host}"
+  ui.msg "Tagging deployment of #{git_ref} to #{host}"
   # note: force option required as host without timestamp used as tag name
-  `git tag -f -a #{host} -m \"#{git_user} released #{git_ref} to #{host}\" head`
+  `git tag -f -a #{host} -m \"#{git_user} deployed #{git_ref} to #{host}\" head`
   `git push -f origin #{host}`
 end
