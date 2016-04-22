@@ -8,11 +8,18 @@ what has been deployed to a host.
 
 ## Installation
 
-Assuming you are using bundler, just add to Gemfile:
+Assuming you are using bundler, add this gem and knife-solo_hooks to Gemfile:
 
     gem 'knife-solo_hooks', github: 'thickpaddy/knife-solo_hooks'
+    gem 'knife-solo_deploytags', github: 'thickpaddy/knife-solo_deploytags'
 
-If you are not using bundler, you know what you're doing, install the gem :-)
+Note: gems are experimental, so not been published to rubygems.org yet.
+
+Then `bundle install` and require from `knife.rb`:
+
+```ruby
+require 'knife-solo_deploytags'
+```
 
 ## Usage
 
